@@ -1,0 +1,22 @@
+.ellipse-text {
+    min-height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.font-20 {
+    font-size: 18px !important;
+}
+
+.color-black {
+    color: black;
+}
+
+@media (max-width: 992px) {
+    .hide-black {
+        display: none;
+    }
+}
