@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        @if(!auth()->user()->role)
-        <a class="navbar-brand" href="{{ route('client') }}">FITNESS</a>
+        @if(auth()->user()->role)
+        <a class="navbar-brand" href="{{ route('trainer') }}">FITNESS</a>
         @endif
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
@@ -23,10 +23,10 @@
                         <div class="dropdown-menu">
                             <h5 class="dropdown-header">{{ auth()->user()->first_name.' '.auth()->user()->last_name }}</h5>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('getClientSession', ['id' => auth()->user()->id]) }}">Session</a>
-                            <a class="dropdown-item" href="{{ route('getClientHistory', ['id' => auth()->user()->id]) }}">History</a>
-                            <a class="dropdown-item" href="{{ route('getClientProfile', ['id' => auth()->user()->id]) }}">Profile</a>
-                            <a class="dropdown-item" href="{{ route('clientChangePassword', ['id' => auth()->user()->id]) }}">Change Password</a>
+                            <a class="dropdown-item" href="{{ route('trainer') }}">Session</a>
+                            <a class="dropdown-item" href="{{ route('getTrainerHistory', ['id' => auth()->user()->id]) }}">History</a>
+                            <a class="dropdown-item" href="{{ route('getTrainerProfile', ['id' => auth()->user()->id]) }}">Profile</a>
+                            <a class="dropdown-item" href="{{ route('trainerChangePassword', ['id' => auth()->user()->id]) }}">Change Password</a>
                             <div class="dropdown-divider"></div>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

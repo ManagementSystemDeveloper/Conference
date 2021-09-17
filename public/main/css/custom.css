@@ -20,3 +20,10 @@
         display: none;
     }
 }
+
+@media (min-width: 992px) {
+    .responsive-color {
+        height: 100px;
+        background-color: #343a40 !important;
+    }
+}

@@ -35,28 +35,26 @@
                   <a href="#">{{ $trainer['name'] }}</a>
                 </h3>
 
-                <!-- <p class="rate">
+                <p class="rate">
                   <i class="icon-star"></i>
                   <i class="icon-star"></i>
                   <i class="icon-star"></i>
                   <i class="icon-star"></i>
                   <i class="icon-star-o"></i>
                   <span>8 Rating</span>
-                </p> -->
+                </p>
               </div>
-              <!-- <div class="two">
+              <div class="two">
                 <span class="price per-price">$40 <br>
                   <small>/night</small>
                 </span>
-              </div> -->
+              </div>
             </div>
             <a class="color-black" href="{{ route('getTrainerDetail', ['id' => $trainer['id']]) }}"><p class="ellipse-text">{{ $trainer['description'] }}</p></a>
             <hr>
             <p class="bottom-area d-flex">
-              <!-- <span>
-                <i class="icon-map-o"></i> Miami, Fl </span> -->
               <span class="ml-auto">
-                <a href="#">Book Now</a>
+                <a href="javascript:alert('Successfully booked!');">Book Now</a>
               </span>
             </p>
           </div>

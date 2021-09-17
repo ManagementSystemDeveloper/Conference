@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
 
         <!-- style -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <link rel="stylesheet" href="{{ asset('main/css/open-iconic-bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('main/css/animate.css') }}">
         
@@ -31,11 +32,17 @@
         <link rel="stylesheet" href="{{ asset('main/css/icomoon.css') }}">
         <link rel="stylesheet" href="{{ asset('main/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('main/css/custom.css') }}">
+
+        @yield('style')
     </head>
     <body>
       
       @auth
-        @include('layouts.components.nav')
+        @if(auth()->user()->role)
+          @include('layouts.components.nav-trainer')
+        @else
+          @include('layouts.components.nav')
+        @endif
       @endauth
 
       @yield('content')

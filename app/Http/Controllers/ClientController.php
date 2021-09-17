@@ -13,6 +13,10 @@ class ClientController extends Controller
 
     public function index()
     {
+        if(auth()->user()->role){
+            return redirect('/trainer');
+        }
+        
         $trainerData = array(
             array(
                 'name' => 'Mikle Jordan',
@@ -49,13 +53,33 @@ class ClientController extends Controller
         return view('clientLandingPage', compact('trainerData'));
     }
 
-    public function getTrainerDetail($id)
+    public function changePassword()
     {
-        $trainerData = array(
-            'name' => 'Mikle Jordan',
-            'description' => 'I am a professional trainer who has over 3 years of experience.',
-            'image' => 'main/images/person_1.jpg'
-        );
-        return view('trainerDetailPage', compact('trainerData'));
+
+        return view('changePassword');
+    }
+
+    public function getSession()
+    {
+
+        return view('clientSession');
+    }
+
+    public function getHistory()
+    {
+
+        return view('clientHistory');
+    }
+
+    public function getProfile()
+    {
+
+        return view('clientProfilePage');
+    }
+
+    public function call()
+    {
+
+        return view('call');
     }
 }
